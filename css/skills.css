@@ -24,23 +24,25 @@ p {
 
 /* === SECTION TITLE & INTRO === */
 .section-title {
-    margin-top:6rem;
+    margin-top: 6rem;
     text-align: center;
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 700;
     margin-bottom: 2rem;
     color: var(--text-color);
+    word-wrap: break-word;
 }
 
 .intro-section {
     max-width: 900px;
     margin: 0 auto 4rem;
     text-align: center;
+    padding: 0 1rem;
 }
 
 .intro-section h2 {
     color: var(--text-color);
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
     font-weight: 700;
     margin-bottom: 1rem;
 }
@@ -55,7 +57,7 @@ p {
 
 .intro-text {
     color: var(--light-text);
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     line-height: 1.8;
     margin-top: 1rem;
 }
@@ -68,6 +70,8 @@ p {
     display: flex;
     flex-direction: column;
     gap: 3rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .skill-category {
@@ -76,6 +80,8 @@ p {
     padding: 2.5rem;
     box-shadow: 0 5px 15px var(--shadow);
     transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .skill-category:hover {
@@ -88,13 +94,15 @@ p {
     align-items: center;
     gap: 1rem;
     color: var(--text-color);
-    font-size: 1.8rem;
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
     font-weight: 700;
     margin: 0 0 2rem 0;
+    word-wrap: break-word;
 }
 
 .skill-category-title svg {
     color: var(--primary-color);
+    flex-shrink: 0;
 }
 
 /* Skill Bars */
@@ -102,10 +110,12 @@ p {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    width: 100%;
 }
 
 .skill-bar {
     position: relative;
+    width: 100%;
 }
 
 .skill-info {
@@ -113,6 +123,8 @@ p {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0.8rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .skill-name-with-icon {
@@ -124,17 +136,18 @@ p {
 .skill-icon {
     font-size: 1.5rem;
     line-height: 1;
+    flex-shrink: 0;
 }
 
 .skill-name {
     color: var(--text-color);
-    font-size: 1.1rem;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
     font-weight: 600;
 }
 
 .skill-level {
     color: var(--primary-color);
-    font-size: 1rem;
+    font-size: clamp(0.85rem, 2vw, 1rem);
     font-weight: 700;
 }
 
@@ -144,6 +157,7 @@ p {
     border-radius: 50px;
     overflow: hidden;
     position: relative;
+    width: 100%;
 }
 
 .skill-progress-bar {
@@ -209,6 +223,7 @@ p {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1.5rem;
+    width: 100%;
 }
 
 .tool-card {
@@ -219,6 +234,8 @@ p {
     text-align: center;
     transition: all 0.3s ease;
     cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .tool-card:hover {
@@ -235,9 +252,10 @@ p {
 
 .tool-card h4 {
     color: var(--text-color);
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
     font-weight: 600;
     margin: 0;
+    word-wrap: break-word;
 }
 
 /* Soft Skills */
@@ -245,6 +263,7 @@ p {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 2rem;
+    width: 100%;
 }
 
 .soft-skill {
@@ -292,7 +311,7 @@ p {
 
 .soft-skill p {
     color: var(--text-color);
-    font-size: 1.05rem;
+    font-size: clamp(0.9rem, 2vw, 1.05rem);
     font-weight: 600;
     margin: 0;
 }
@@ -322,10 +341,11 @@ p {
 @media (max-width: 968px) {
     .skills-container {
         padding: 0 1rem;
+        gap: 2rem;
     }
     
     .skill-category {
-        padding: 1.5rem;
+        padding: 2rem 1.5rem;
     }
     
     .skill-category-title {
@@ -352,70 +372,263 @@ p {
 }
 
 @media (max-width: 768px) {
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
+    .intro-section {
+        margin-bottom: 3rem;
+    }
+
+    .skills-container {
+        padding: 0 0.75rem;
+    }
+
+    .skill-category {
+        padding: 1.75rem 1.25rem;
+    }
+
+    .skill-category-title {
+        font-size: 1.4rem;
+        gap: 0.8rem;
+    }
+
+    .skill-bars {
+        gap: 1.25rem;
+    }
+
+    .tools-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .tool-icon {
+        font-size: 2rem;
     }
 }
 
 @media (max-width: 480px) {
-    .skills-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+    .section-title {
+        margin-top: 8rem;
     }
 
-    .skill-card {
-        padding: 1.5rem;
+    .intro-section {
+        padding: 0 0.75rem;
+        margin-bottom: 2rem;
+    }
+
+    .skills-container {
+        padding: 0 0.5rem;
+        gap: 1.5rem;
+    }
+
+    .skill-category {
+        padding: 1.5rem 1rem;
+        border-radius: 15px;
+    }
+
+    .skill-category-title {
+        font-size: 1.2rem;
+        gap: 0.6rem;
+    }
+
+    .skill-category-title svg {
+        width: 24px;
+        height: 24px;
     }
 
     .skill-icon {
-        font-size: 2rem;
+        font-size: 1.3rem;
     }
 
-    .skill-card h3 {
-        font-size: 1.2rem;
+    .skill-name {
+        font-size: 0.95rem;
+    }
+
+    .skill-level {
+        font-size: 0.85rem;
+    }
+
+    .skill-progress {
+        height: 10px;
+    }
+
+    .tools-grid {
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        gap: 0.75rem;
+    }
+
+    .tool-card {
+        padding: 1rem 0.75rem;
+    }
+
+    .tool-icon {
+        font-size: 1.8rem;
+    }
+
+    .tool-card h4 {
+        font-size: 0.85rem;
+    }
+
+    .soft-skills-grid {
+        gap: 1.5rem;
+    }
+
+    .soft-skill-circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .soft-skill p {
+        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 360px) {
-    .skill-card {
-        padding: 1.25rem;
+    .skills-container {
+        padding: 0 0.25rem;
+        gap: 1.25rem;
     }
 
-    .skill-icon {
-        font-size: 1.8rem;
+    .skill-category {
+        padding: 1.25rem 0.75rem;
     }
 
-    .skill-card h3 {
+    .skill-category-title {
         font-size: 1.1rem;
     }
 
-    .skill-card p {
+    .skill-name {
         font-size: 0.85rem;
+    }
+
+    .skill-level {
+        font-size: 0.8rem;
+    }
+
+    .skill-progress {
+        height: 8px;
+    }
+
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+    }
+
+    .tool-card {
+        padding: 0.8rem 0.5rem;
+    }
+
+    .tool-icon {
+        font-size: 1.6rem;
+    }
+
+    .soft-skill-circle {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .section-title {
+        margin-top: 8rem;
     }
 }
 
 @media (max-width: 300px) {
-    .skills-grid {
-        gap: 0.75rem;
+    .section-title {
+        margin-top: 8rem;
+        font-size: 1.8rem;
     }
 
-    .skill-card {
-        padding: 1rem;
+    .intro-section {
+        padding: 0 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .intro-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .intro-text {
+        font-size: 0.9rem;
+    }
+
+    .divider {
+        width: 80px;
+        height: 3px;
+        margin: 1rem auto;
+    }
+
+    .skills-container {
+        padding: 0;
+        gap: 1rem;
+        margin: 2rem auto;
+    }
+
+    .skill-category {
+        padding: 1rem 0.5rem;
+        border-radius: 12px;
+    }
+
+    .skill-category-title {
+        font-size: 1rem;
+        gap: 0.5rem;
+    }
+
+    .skill-category-title svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .skill-bars {
+        gap: 1rem;
     }
 
     .skill-icon {
-        font-size: 1.5rem;
-        width: 50px;
-        height: 50px;
+        font-size: 1.2rem;
     }
 
-    .skill-card h3 {
-        font-size: 1rem;
-    }
-
-    .skill-card p {
+    .skill-name {
         font-size: 0.75rem;
+    }
+
+    .skill-level {
+        font-size: 0.7rem;
+    }
+
+    .skill-progress {
+        height: 6px;
+    }
+
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    .tool-card {
+        padding: 0.75rem 0.4rem;
+        border-radius: 10px;
+    }
+
+    .tool-icon {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .tool-card h4 {
+        font-size: 0.75rem;
+    }
+
+    .soft-skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .soft-skill-circle {
+        width: 80px;
+        height: 80px;
+    }
+
+    .soft-skill p {
+        font-size: 0.75rem;
+    }
+
+    .percentage {
+        font-size: 0.5em;
     }
 }
 

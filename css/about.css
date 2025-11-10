@@ -27,14 +27,18 @@ p {
     padding: 6rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
+    overflow-x: hidden; /* Voorkom horizontale scroll */
 }
 
 .section-title {
+    margin-top: 6rem;
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 700;
     margin-bottom: 3rem;
     text-align: center;
     color: var(--text-color);
+    word-wrap: break-word; /* Voorkom te lange woorden */
 }
 
 /* Cards */
@@ -43,6 +47,7 @@ p {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+    width: 100%;
 }
 
 .card {
@@ -51,6 +56,8 @@ p {
     padding: 2rem;
     transition: all 0.3s ease;
     cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .card:hover {
@@ -62,11 +69,13 @@ p {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: var(--text-color);
+    word-wrap: break-word;
 }
 
 .card p {
     color: var(--light-text);
     line-height: 1.8;
+    word-wrap: break-word;
 }
 
 .cards-grid a{
@@ -78,6 +87,9 @@ p {
     max-width: 1200px;
     margin: 3rem auto;
     padding: 0 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .about-content {
@@ -86,23 +98,28 @@ p {
     padding: 3rem;
     box-shadow: 0 5px 15px var(--shadow);
     line-height: 1.8;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .about-content h2 {
     color: var(--text-color);
     margin-top: 2rem;
     margin-bottom: 1rem;
+    word-wrap: break-word;
 }
 
 .about-content p {
     color: var(--light-text);
     margin-bottom: 1.5rem;
+    word-wrap: break-word;
 }
 
 .about-content ul {
     list-style: none;
     padding: 0;
     margin: 1.5rem 0;
+    width: 100%;
 }
 
 .about-content li {
@@ -110,6 +127,7 @@ p {
     padding: 0.6rem 0;
     padding-left: 1.8rem;
     position: relative;
+    word-wrap: break-word;
 }
 
 .about-content li::before {
@@ -121,8 +139,13 @@ p {
 }
 
 @media (max-width: 768px) {
+    .section {
+        padding: 4rem 1rem;
+    }
+
     .about-container {
         padding: 0 1rem;
+        margin: 2rem auto;
     }
     
     .about-content {
@@ -138,9 +161,27 @@ p {
         max-width: 250px;
         margin: 0 auto;
     }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
 }
 
 @media (max-width: 480px) {
+    .section {
+        padding: 3rem 0.75rem;
+    }
+
+    .about-container {
+        padding: 0 0.75rem;
+    }
+
+    .about-content {
+        padding: 1.5rem 1rem;
+        border-radius: 15px;
+    }
+
     .about-content h2 {
         font-size: 1.5rem;
     }
@@ -165,9 +206,29 @@ p {
     .stat-card p {
         font-size: 0.9rem;
     }
+
+    .cards-grid {
+        gap: 1rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
 }
 
 @media (max-width: 360px) {
+    .section {
+        padding: 2rem 0.5rem;
+    }
+
+    .about-container {
+        padding: 0 0.5rem;
+    }
+
+    .about-content {
+        padding: 1.25rem 0.75rem;
+    }
+
     .about-content h2 {
         font-size: 1.3rem;
     }
@@ -187,11 +248,29 @@ p {
     .stat-card h3 {
         font-size: 1.5rem;
     }
+
+    .card {
+        padding: 1.25rem;
+    }
 }
 
 @media (max-width: 300px) {
+    .section {
+        padding: 1.5rem 0.25rem;
+    }
+
+    .about-container {
+        padding: 0 0.25rem;
+        margin: 1rem auto;
+    }
+
     .about-grid {
         gap: 1rem;
+    }
+
+    .about-content {
+        padding: 1rem 0.5rem;
+        border-radius: 12px;
     }
 
     .about-content h2 {
@@ -201,6 +280,11 @@ p {
     .about-content p {
         font-size: 0.75rem;
         line-height: 1.5;
+    }
+
+    .about-content li {
+        font-size: 0.75rem;
+        padding-left: 1.5rem;
     }
 
     .profile-image {
@@ -221,5 +305,18 @@ p {
 
     .stat-card p {
         font-size: 0.75rem;
+    }
+
+    .card {
+        padding: 1rem;
+        border-radius: 12px;
+    }
+
+    .card h3 {
+        font-size: 1.2rem;
+    }
+
+    .card p {
+        font-size: 0.85rem;
     }
 }
