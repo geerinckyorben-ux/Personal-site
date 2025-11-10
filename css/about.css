@@ -1,0 +1,225 @@
+/* === BASIC TYPOGRAPHY === */
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--light-text);
+    margin-bottom: 1rem;
+}
+
+/* Content Sections */
+.section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: var(--text-color);
+}
+
+/* Cards */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px var(--shadow);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.card p {
+    color: var(--light-text);
+    line-height: 1.8;
+}
+
+.cards-grid a{
+    text-decoration: none;
+}
+
+/* === ABOUT PAGE STYLES === */
+.about-container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.about-content {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 5px 15px var(--shadow);
+    line-height: 1.8;
+}
+
+.about-content h2 {
+    color: var(--text-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-content p {
+    color: var(--light-text);
+    margin-bottom: 1.5rem;
+}
+
+.about-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.about-content li {
+    color: var(--text-color);
+    padding: 0.6rem 0;
+    padding-left: 1.8rem;
+    position: relative;
+}
+
+.about-content li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        padding: 0 1rem;
+    }
+    
+    .about-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .profile-image {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .about-content p {
+        font-size: 0.95rem;
+    }
+
+    .profile-image {
+        max-width: 200px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .stat-card h3 {
+        font-size: 1.8rem;
+    }
+
+    .stat-card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .about-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .about-content p {
+        font-size: 0.85rem;
+    }
+
+    .profile-image {
+        max-width: 180px;
+    }
+
+    .stat-card {
+        padding: 1.25rem;
+    }
+
+    .stat-card h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 300px) {
+    .about-grid {
+        gap: 1rem;
+    }
+
+    .about-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .about-content p {
+        font-size: 0.75rem;
+        line-height: 1.5;
+    }
+
+    .profile-image {
+        max-width: 150px;
+    }
+
+    .stats-grid {
+        gap: 0.75rem;
+    }
+
+    .stat-card {
+        padding: 1rem;
+    }
+
+    .stat-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .stat-card p {
+        font-size: 0.75rem;
+    }
+}

@@ -1,18 +1,25 @@
+<!DOCTYPE html>
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skills - Portfolio</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/skills.css">
     <link rel="stylesheet" href="css/animations.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <a href="index.html" class="logo">Portfolio</a>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
                 <li><a href="cv.html" class="nav-link">CV</a></li>
                 <li><a href="projects.html" class="nav-link">Projects</a></li>
                 <li><a href="gallery.html" class="nav-link">Gallery</a></li>
@@ -30,7 +37,7 @@
             <p class="intro-text">
                 Door de jaren heen heb ik een breed scala aan technische en professionele vaardigheden 
                 ontwikkeld. Van programmeren en cybersecurity tot probleemoplossend denken en 
-                teamwerk — deze vaardigheden vormen de basis van mijn werk.
+                teamwerk. Deze vaardigheden vormen de basis van mijn werk.
             </p>
         </div>
 
@@ -38,7 +45,7 @@
             <!-- Programming Languages -->
             <div class="skill-category fade-in">
                 <h3 class="skill-category-title">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <polyline points="16 18 22 12 16 6"></polyline>
                         <polyline points="8 6 2 12 8 18"></polyline>
                     </svg>
@@ -47,87 +54,98 @@
                 <div class="skill-bars">
                     <div class="skill-bar">
                         <div class="skill-info">
-                            <span class="skill-name">Python</span>
-                            <span class="skill-level">90%</span>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span class="skill-name">JavaScript</span>
-                            <span class="skill-level">75%</span>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" style="width: 75%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span class="skill-name">HTML/CSS</span>
+                            <div class="skill-name-with-icon">
+                                <span class="skill-icon">🐍</span>
+                                <span class="skill-name">Python</span>
+                            </div>
                             <span class="skill-level">85%</span>
                         </div>
                         <div class="skill-progress">
-                            <div class="skill-progress-bar" style="width: 85%"></div>
+                            <div class="skill-progress-bar python-bar" style="width: 85%"></div>
                         </div>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-info">
-                            <span class="skill-name">SQL</span>
-                            <span class="skill-level">70%</span>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" style="width: 70%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cybersecurity -->
-            <div class="skill-category fade-in">
-                <h3 class="skill-category-title">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                    </svg>
-                    Cybersecurity
-                </h3>
-                <div class="skill-bars">
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span class="skill-name">Netwerkbeveiliging</span>
-                            <span class="skill-level">80%</span>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-info">
-                            <span class="skill-name">Penetration Testing</span>
+                            <div class="skill-name-with-icon">
+                                <span class="skill-icon">⚡</span>
+                                <span class="skill-name">JavaScript</span>
+                            </div>
                             <span class="skill-level">75%</span>
                         </div>
                         <div class="skill-progress">
-                            <div class="skill-progress-bar" style="width: 75%"></div>
+                            <div class="skill-progress-bar javascript-bar" style="width: 75%"></div>
                         </div>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-info">
-                            <span class="skill-name">Threat Analysis</span>
+                            <div class="skill-name-with-icon">
+                                <span class="skill-icon">🎨</span>
+                                <span class="skill-name">HTML/CSS</span>
+                            </div>
+                            <span class="skill-level">90%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar html-bar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <div class="skill-name-with-icon">
+                                <span class="skill-icon">🗄️</span>
+                                <span class="skill-name">SQL</span>
+                            </div>
                             <span class="skill-level">70%</span>
                         </div>
                         <div class="skill-progress">
-                            <div class="skill-progress-bar" style="width: 70%"></div>
+                            <div class="skill-progress-bar sql-bar" style="width: 70%"></div>
                         </div>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-info">
-                            <span class="skill-name">Security Auditing</span>
-                            <span class="skill-level">65%</span>
+                            <div class="skill-name-with-icon">
+                                <span class="skill-icon">💎</span>
+                                <span class="skill-name">C#</span>
+                            </div>
+                            <span class="skill-level">75%</span>
                         </div>
                         <div class="skill-progress">
-                            <div class="skill-progress-bar" style="width: 65%"></div>
+                            <div class="skill-progress-bar csharp-bar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <div class="skill-name-with-icon">
+                                <span class="skill-icon">🅰️</span>
+                                <span class="skill-name">Angular</span>
+                            </div>
+                            <span class="skill-level">70%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar angular-bar" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <div class="skill-name-with-icon">
+                                <span class="skill-icon">📘</span>
+                                <span class="skill-name">TypeScript</span>
+                            </div>
+                            <span class="skill-level">75%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar typescript-bar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <div class="skill-name-with-icon">
+                                <span class="skill-icon">💻</span>
+                                <span class="skill-name">Bash</span>
+                            </div>
+                            <span class="skill-level">80%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar bash-bar" style="width: 80%"></div>
                         </div>
                     </div>
                 </div>
@@ -136,7 +154,7 @@
             <!-- Tools & Technologies -->
             <div class="skill-category fade-in">
                 <h3 class="skill-category-title">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
                     </svg>
                     Tools & Technologieën
@@ -147,7 +165,7 @@
                         <h4>Linux</h4>
                     </div>
                     <div class="tool-card">
-                        <div class="tool-icon">🔧</div>
+                        <div class="tool-icon">📦</div>
                         <h4>Git</h4>
                     </div>
                     <div class="tool-card">
@@ -163,8 +181,40 @@
                         <h4>Metasploit</h4>
                     </div>
                     <div class="tool-card">
-                        <div class="tool-icon">⚡</div>
-                        <h4>Burp Suite</h4>
+                        <div class="tool-icon">💿</div>
+                        <h4>VMware</h4>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">📦</div>
+                        <h4>VirtualBox</h4>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🌐</div>
+                        <h4>Packet Tracer</h4>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🖥️</div>
+                        <h4>Tera Term</h4>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🍃</div>
+                        <h4>MongoDB</h4>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🐬</div>
+                        <h4>MySQL</h4>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🗺️</div>
+                        <h4>Zenmap</h4>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">📝</div>
+                        <h4>VSCode</h4>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🎯</div>
+                        <h4>Visual Studio 2022</h4>
                     </div>
                 </div>
             </div>
@@ -172,7 +222,7 @@
             <!-- Soft Skills -->
             <div class="skill-category fade-in">
                 <h3 class="skill-category-title">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                         <circle cx="9" cy="7" r="4"></circle>
                         <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
@@ -184,8 +234,14 @@
                     <div class="soft-skill">
                         <div class="soft-skill-circle">
                             <svg viewBox="0 0 36 36" class="circular-chart">
+                                <defs>
+                                    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
                                 <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                <path class="circle" stroke-dasharray="90, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                <path class="circle" stroke="url(#gradient1)" stroke-dasharray="90, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                                 <text x="18" y="20.35" class="percentage">90%</text>
                             </svg>
                         </div>
@@ -194,8 +250,14 @@
                     <div class="soft-skill">
                         <div class="soft-skill-circle">
                             <svg viewBox="0 0 36 36" class="circular-chart">
+                                <defs>
+                                    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
                                 <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                <path class="circle" stroke-dasharray="85, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                <path class="circle" stroke="url(#gradient2)" stroke-dasharray="85, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                                 <text x="18" y="20.35" class="percentage">85%</text>
                             </svg>
                         </div>
@@ -204,8 +266,14 @@
                     <div class="soft-skill">
                         <div class="soft-skill-circle">
                             <svg viewBox="0 0 36 36" class="circular-chart">
+                                <defs>
+                                    <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
                                 <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                <path class="circle" stroke-dasharray="80, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                <path class="circle" stroke="url(#gradient3)" stroke-dasharray="80, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                                 <text x="18" y="20.35" class="percentage">80%</text>
                             </svg>
                         </div>
@@ -214,8 +282,14 @@
                     <div class="soft-skill">
                         <div class="soft-skill-circle">
                             <svg viewBox="0 0 36 36" class="circular-chart">
+                                <defs>
+                                    <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#11998e;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#38ef7d;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
                                 <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                <path class="circle" stroke-dasharray="95, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                <path class="circle" stroke="url(#gradient4)" stroke-dasharray="95, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                                 <text x="18" y="20.35" class="percentage">95%</text>
                             </svg>
                         </div>
@@ -229,7 +303,7 @@
     <footer class="footer">
         <div class="footer-links">
             <a href="https://github.com/yorbengeerinck" class="footer-link">GitHub</a>
-            <a href="https://www.linkedin.com/in/yorben-geerinck-a59535250/" class="footer-link">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/yorben-g-ab7897333/" class="footer-link">LinkedIn</a>
             <a href="https://www.instagram.com/yorben_geerinck/" class="footer-link">Instagram</a>
         </div>
         <p>&copy; 2025 Yorben Geerinck-Mijn Portfolio. Alle rechten voorbehouden.</p>
