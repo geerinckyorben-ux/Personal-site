@@ -96,7 +96,7 @@ p {
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 650px; /* Vergroot de hele project showcase */
+    min-height: 650px;
 }
 
 .project-showcase:nth-child(even) {
@@ -111,7 +111,7 @@ p {
     position: relative;
     border-radius: 16px;
     overflow: hidden;
-    min-height: 600px; /* Vergroot het linker gedeelte */
+    min-height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -127,6 +127,7 @@ p {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
     z-index: 1;
     transition: all 0.3s ease;
+    border-radius: 16px;
 }
 
 .project-showcase:hover .project-image::before {
@@ -150,14 +151,49 @@ p {
     font-family: Arial, sans-serif;
 }
 
+/* Video showcase styling - centraal in project-image */
+.project-media {
+    position: relative;
+    width: 100%;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    margin: auto 0;
+}
+
+.project-video {
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 350px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    object-fit: cover;
+}
+
+/* Grid container voor tech badges en fullscreen button */
+.project-bottom-section {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    z-index: 5;
+    position: relative;
+    margin-top: auto;
+}
+
 .project-tech-stack {
-    position: absolute;
-    bottom: 2rem;
-    left: 2rem;
     display: flex;
     gap: 0.8rem;
     flex-wrap: wrap;
-    z-index: 2;
+    align-items: center;
+    z-index: 5;
+    position: relative;
 }
 
 .tech-badge {
@@ -177,87 +213,60 @@ p {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Video showcase styling */
-.project-media {
-    position: relative;
-    width: 120%;
-    max-width: 120%; /* Gebruik volledige breedte */
-    overflow: hidden;
-    border-radius: 12px;
-    margin: 1rem 0;
-}
-
-.project-video {
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
-}
-
 .fullscreen-btn {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background: rgba(30, 30, 30, 0.85);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(102, 126, 234, 0.3);
     border-radius: 12px;
-    padding: 14px 18px;
+    padding: 12px 20px;
     cursor: pointer;
-    color: white;
+    color: #333;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 8px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 10;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: auto;
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+    z-index: 5;
+    position: relative;
 }
 
 .fullscreen-btn:hover {
-    background: rgba(50, 50, 50, 0.95);
-    border-color: rgba(255, 255, 255, 0.4);
-    transform: scale(1.08);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-}
-
-.fullscreen-btn:active {
-    transform: scale(0.95);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+    border-color: transparent;
 }
 
 .fullscreen-btn svg {
-    width: 26px;
-    height: 26px;
-    stroke-width: 2.5;
+    width: 20px;
+    height: 20px;
 }
 
 /* Fullscreen mode styling */
 .project-video:fullscreen {
     object-fit: contain;
     background: black;
+    max-height: 100vh;
 }
 
 .project-video:-webkit-full-screen {
     object-fit: contain;
     background: black;
+    max-height: 100vh;
 }
 
 .project-video:-moz-full-screen {
     object-fit: contain;
     background: black;
+    max-height: 100vh;
 }
 
-/* Project Media Styling */
-.project-media {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-}
-
-.project-video,
 .project-screenshot {
     width: 100%;
     height: auto;
@@ -267,20 +276,13 @@ p {
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
     object-fit: cover;
     transition: all 0.4s ease;
+    cursor: pointer;
 }
 
 .project-showcase:hover .project-video,
 .project-showcase:hover .project-screenshot {
     transform: scale(1.05);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
-}
-
-.project-video {
-    border: 3px solid rgba(255, 255, 255, 0.15);
-}
-
-.project-screenshot {
-    cursor: pointer;
 }
 
 .project-gradient-1 {
@@ -427,6 +429,10 @@ p {
     .project-number {
         font-size: 5rem;
     }
+
+    .project-video {
+        max-height: 280px;
+    }
 }
 
 @media (max-width: 968px) {
@@ -455,7 +461,7 @@ p {
     }
     
     .project-image {
-        min-height: 400px;
+        min-height: 500px;
         order: 1;
     }
     
@@ -467,12 +473,6 @@ p {
         font-size: 4rem;
         top: 1rem;
         right: 1rem;
-    }
-    
-    .project-tech-stack {
-        bottom: 1rem;
-        left: 1rem;
-        max-width: calc(100% - 2rem);
     }
     
     .project-header {
@@ -487,36 +487,48 @@ p {
         align-self: flex-start;
     }
     
-    .project-media {
-        padding: 1rem;
+    .project-video {
+        max-width:500px
     }
-    
-    .project-video,
-    .project-screenshot {
-        max-width: 100%;
-        max-height: 280px;
+
+    .project-media {
+        margin: 1rem 0;
     }
 }
 
 @media (max-width: 768px) {
     .project-showcase {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 2rem;
-        min-height: auto;
+        padding: 1.5rem;
+        gap: 1.5rem;
         margin-bottom: 3rem;
     }
     
     .project-image {
-        min-height: 400px;
+        min-height: 450px;
+        padding: 1.5rem;
     }
-    
-    .project-media {
-        height: 350px;
+
+    .project-video {
+        max-width:400px
     }
 
     .project-number {
-        font-size: 4rem;
+        font-size: 3.5rem;
+    }
+
+    .tech-badge {
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .fullscreen-btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+
+    .fullscreen-btn svg {
+        width: 18px;
+        height: 18px;
     }
 }
 
@@ -530,75 +542,81 @@ p {
     }
 
     .project-showcase {
-        padding: 1.5rem;
-        gap: 1.5rem;
+        padding: 1rem;
+        gap: 1rem;
         margin-bottom: 2rem;
     }
 
     .project-image {
-        min-height: 300px;
-        padding: 1.5rem;
+        min-height: 350px;
+        padding: 1rem;
     }
 
-    .project-media {
-        height: 250px;
+    .project-bottom-section {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .fullscreen-btn {
+        width: 20%;
+        justify-content: center;
+        padding: 10px 14px;
+        font-size: 0.8rem;
+    }
+
+    .project-video {
+        max-width: 250px;
     }
 
     .project-number {
         font-size: 3rem;
+        top: 0.75rem;
+        right: 0.75rem;
+    }
+
+    .project-tech-stack {
+        gap: 0.5rem;
     }
 
     .tech-badge {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         padding: 0.4rem 0.8rem;
     }
 
-    .project-header h3 {
-        font-size: 1.5rem;
-    }
-
-    .project-description {
-        font-size: 0.9rem;
-    }
-
-    .fullscreen-btn {
-        padding: 10px 12px;
-        bottom: 12px;
-        right: 12px;
-    }
-
     .fullscreen-btn svg {
-        width: 20px;
-        height: 20px;
+        height: 16px;
     }
 }
 
 @media (max-width: 360px) {
     .project-showcase {
-        padding: 1rem;
-        gap: 1rem;
+        padding: 0.75rem;
+        gap: 0.75rem;
     }
 
     .project-image {
-        min-height: 250px;
-        padding: 1rem;
+        min-height: 300px;
+        padding: 0.75rem;
     }
 
-    .project-media {
-        height: 200px;
+    .project-video {
+        max-width: 175px;
     }
 
     .project-number {
         font-size: 2.5rem;
+        top: 0.5rem;
+        right: 0.5rem;
     }
 
     .tech-badge {
-        font-size: 0.7rem;
-        padding: 0.3rem 0.6rem;
+        font-size: 0.65rem;
+        padding: 0.35rem 0.7rem;
     }
 
-    .project-features ul li {
-        font-size: 0.85rem;
+    .fullscreen-btn {
+        padding: 8px 12px;
+        font-size: 0.75rem;
     }
 }
 
@@ -612,55 +630,46 @@ p {
     }
 
     .project-showcase {
-        padding: 0.75rem;
-        gap: 0.75rem;
+        padding: 0.5rem;
+        gap: 0.5rem;
         border-radius: 12px;
     }
 
     .project-image {
-        min-height: 200px;
-        padding: 0.75rem;
+        min-height: 250px;
+        padding: 0.5rem;
         border-radius: 12px;
     }
 
-    .project-media {
-        height: 180px;
+    .project-video {
+        max-height: 100px;
         border-radius: 8px;
+        border-width: 2px;
     }
 
     .project-number {
         font-size: 2rem;
+        top: 0.25rem;
+        right: 0.25rem;
+    }
+
+    .project-bottom-section {
+        gap: 0.5rem;
     }
 
     .tech-badge {
-        font-size: 0.65rem;
-        padding: 0.25rem 0.5rem;
-    }
-
-    .project-header h3 {
-        font-size: 1.2rem;
-    }
-
-    .project-description {
-        font-size: 0.8rem;
-    }
-
-    .project-features h4 {
-        font-size: 1rem;
-    }
-
-    .project-features ul li {
-        font-size: 0.75rem;
+        font-size: 0.6rem;
+        padding: 0.3rem 0.6rem;
     }
 
     .fullscreen-btn {
-        padding: 8px 10px;
-        bottom: 8px;
-        right: 8px;
+        padding: 7px 10px;
+        font-size: 0.7rem;
+        border-radius: 8px;
     }
 
     .fullscreen-btn svg {
-        width: 18px;
-        height: 18px;
+        width: 14px;
+        height: 14px;
     }
 }
