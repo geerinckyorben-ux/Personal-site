@@ -237,6 +237,10 @@
     .profile-card {
         position: static;
     }
+
+    .profile-actions{
+        align-items: center;
+    }
 }
 
 @media (max-width: 768px) {
