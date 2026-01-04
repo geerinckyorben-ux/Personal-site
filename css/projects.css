@@ -379,7 +379,6 @@ p {
 }
 
 .project-features h4::before {
-    content: '✨';
     font-size: 1.3rem;
 }
 

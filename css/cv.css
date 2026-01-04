@@ -351,18 +351,6 @@ p {
     gap: 0.8rem;
 }
 
-.card h3::before {
-    content: '💼';
-    font-size: 1.8rem;
-}
-
-.card:nth-child(1) h3::before { content: '🎨'; }
-.card:nth-child(2) h3::before { content: '⚙️'; }
-.card:nth-child(3) h3::before { content: '🛠️'; }
-.card:nth-child(4) h3::before { content: '🌍'; }
-.card:nth-child(5) h3::before { content: '💰'; }
-.card:nth-child(6) h3::before { content: '🚀'; }
-
 .card p {
     color: var(--light-text);
     line-height: 1.8;
