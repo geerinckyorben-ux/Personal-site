@@ -32,7 +32,7 @@
 
     <section class="section margin-top-80">
         <h1 class="section-title fade-in">Mijn CV</h1>
-        
+
         <!-- CV Download Section -->
         <div class="cv-download-section fade-in">
             <div class="cv-download-card">
@@ -50,7 +50,7 @@
                     <p>Bekijk of download mijn complete curriculum vitae in PDF formaat</p>
                 </div>
                 <div class="cv-actions">
-                    <a href="assets/CV_Yorben_Geerinck_(8112025).pdf" download class="cv-button download">
+                    <a href="assets/CV_Yorben_Geerinck_(1052026).pdf" download class="cv-button download">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                             <polyline points="7 10 12 15 17 10"></polyline>
@@ -58,7 +58,7 @@
                         </svg>
                         Download PDF
                     </a>
-                    <a href="assets/CV_Yorben_Geerinck_(8112025).pdf" target="_blank" class="cv-button view">
+                    <a href="assets/CV_Yorben_Geerinck_(1052026).pdf" target="_blank" class="cv-button view">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                             <circle cx="12" cy="12" r="3"></circle>
@@ -69,65 +69,100 @@
             </div>
         </div>
 
-        
-        <h2>Korte samenvatting</h2>
-        <div class="timeline">
+        <!-- Samenvatting (nieuw, kort, niet dubbel met de rest van je site) -->
+        <div class="cards-grid fade-in margin-top-4rem">
+            <div class="card">
+                <h3>Profiel</h3>
+                <p>
+                    IT-profiel met sterke interesse in cybersecurity, netwerken en softwareontwikkeling.
+                    Ik combineer hands-on labs met projectmatig werken en documenteer graag helder.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Focus</h3>
+                <p>
+                    Security fundamentals, netwerk-analyse, scripting/automatisatie en web development.
+                    Ik werk graag praktisch: testen, meten, verbeteren en herhalen.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Werkwijze</h3>
+                <p>
+                    Gestructureerd, leergierig en oplossingsgericht. Ik splits problemen op in kleine stappen
+                    en valideren doe ik met logs, tooling en reproduceerbare tests.
+                </p>
+            </div>
+        </div>
+
+        <!-- Opleiding & Ervaring (nieuw: timeline die je CSS al ondersteunt) -->
+        <h2 class="fade-in margin-top-4rem">Tijdlijn</h2>
+
+        <div class="timeline fade-in" aria-label="Tijdlijn opleiding en ervaring">
             <div class="timeline-item">
+                <div class="timeline-date">Recent</div>
                 <div class="timeline-content">
-                    <div class="timeline-date">2024 - Heden</div>
-                    <h3>Hogeschool: Bachelor Elektronica-ICT: Cyber Security & Cloud</h3>
-                    <p>Ik ben student aan AP Hogeschool. (jaar 1: completed)</p>
+                    <h3>Projecten & labs</h3>
+                    <p>
+                        Praktijkervaring opgebouwd via eigen projecten en labo’s rond networking, security en development:
+                        o.a. traffic analysis, OSINT basics, vulnerability scanning en web/app ontwikkeling.
+                    </p>
                 </div>
             </div>
 
             <div class="timeline-item">
+                <div class="timeline-date">Afgelopen periode</div>
                 <div class="timeline-content">
-                    <div class="timeline-date">2022 - Heden</div>
-                    <h3>Jobstudent Colruyt Bornem</h3>
-                    <p>Mooie werkomgeving met veel gepassioneerde personen.</p>
+                    <h3>Cybersecurity & netwerken</h3>
+                    <p>
+                        Verdieping in netwerkconcepten (routing/switching), protocollen, troubleshooting en security tooling
+                        (scan/enum, packet capture, basic hardening).
+                    </p>
                 </div>
             </div>
-            
+
             <div class="timeline-item">
+                <div class="timeline-date">Eerder</div>
                 <div class="timeline-content">
-                    <div class="timeline-date">2018 - 2024</div>
-                    <h3>Middelbaar: Economie Moderne Talen (EMT)</h3>
-                    <p>Diploma: geslaagd</p>
+                    <h3>Softwareontwikkeling</h3>
+                    <p>
+                        Gebouwd aan web- en softwareprojecten met focus op structuur, leesbaarheid, versiebeheer en iteratief verbeteren.
+                    </p>
                 </div>
             </div>
         </div>
 
-        <div class="margin-top-4rem">
-            <h2 class="section-title">Vaardigheden Hogeschool</h2>
-            <div class="cards-grid">
-                <div class="card">
-                    <h3>Frontend</h3>
-                    <p>HTML, CSS, JavaScript, TypeScript, Node.js, Angular</p>
-                </div>
-                <div class="card">
-                    <h3>Backend</h3>
-                    <p>Node.js, Python, Express, APIs, databases: MySQL, MongoDB</p>
-                </div>
-                <div class="card">
-                    <h3>Tools</h3>
-                    <p>Git, Docker, VS Code, Oracle Virtualbox, Cisco Packet Tracer, VMware Workstation Pro, Office 365 en zoveel meer.</p>
-                </div>
+        <!-- Extra (nieuw): kerncompetenties in compacte cards -->
+        <h2 class="fade-in margin-top-4rem">Kerncompetenties</h2>
+
+        <div class="cards-grid fade-in">
+            <div class="card">
+                <h3>Security & analyse</h3>
+                <p>
+                    Packet captures interpreteren, basis aanvalsvectoren herkennen, risico’s inschatten en bevindingen rapporteren.
+                </p>
             </div>
 
-            <h2 class="section-title">Vaardigheden Middelbaar Onderwijs</h2>
-            <div class="cards-grid">
-                <div class="card">
-                    <h3>Talen</h3>
-                    <p>Nederlands (moedertaal), Engels (gevorderd), Frans (goed), Duits (basis)</p>
-                </div>
-                <div class="card">
-                    <h3>Economie</h3>
-                    <p>Boekhouden, Marketing, Bedrijfsbeheer, Economische principes, Financieel inzicht</p>
-                </div>
-                <div class="card">
-                    <h3>Mini-onderneming</h3>
-                    <p>Praktijkervaring met ondernemerschap, teammanagement, productie en verkoop. Ontwikkeling van zakelijke vaardigheden en projectbeheer.</p>
-                </div>
+            <div class="card">
+                <h3>Netwerken</h3>
+                <p>
+                    Subnetting, basis routing/switching, services begrijpen (DNS/DHCP/HTTP(S)) en troubleshooting via logs & tools.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Scripting & automatisatie</h3>
+                <p>
+                    Automatiseren van repetitieve taken, data parsing en kleine tooling bouwen voor efficiëntie (Bash/Python/PowerShell).
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Development workflow</h3>
+                <p>
+                    Git-branches, commits, code-structuur, debugging en iteratief testen (lokaal + in browser/IDE).
+                </p>
             </div>
         </div>
     </section>

@@ -62,7 +62,7 @@ p {
     margin-top: 1rem;
 }
 
-/* === SKILLS PAGE STYLES === */
+/* === SKILLS PAGE LAYOUT === */
 .skills-container {
     max-width: 1200px;
     margin: 3rem auto;
@@ -82,11 +82,12 @@ p {
     transition: all 0.3s ease;
     width: 100%;
     box-sizing: border-box;
+    border: 1px solid rgba(102, 126, 234, 0.12);
 }
 
 .skill-category:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px var(--shadow);
+    box-shadow: 0 12px 30px var(--shadow);
 }
 
 .skill-category-title {
@@ -95,8 +96,8 @@ p {
     gap: 1rem;
     color: var(--text-color);
     font-size: clamp(1.3rem, 3vw, 1.8rem);
-    font-weight: 700;
-    margin: 0 0 2rem 0;
+    font-weight: 800;
+    margin: 0 0 1rem 0;
     word-wrap: break-word;
 }
 
@@ -105,269 +106,163 @@ p {
     flex-shrink: 0;
 }
 
-/* Skill Bars */
-.skill-bars {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 100%;
+.category-subtitle {
+    margin: 0 0 1.5rem 0;
+    color: var(--light-text);
+    font-size: 1.05rem;
 }
 
-.skill-bar {
-    position: relative;
-    width: 100%;
-}
-
-.skill-info {
+/* === CHIPS (lijst van talen) === */
+.chips {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.8rem;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.75rem;
+    margin: 0 0 2rem 0;
 }
 
-.skill-name-with-icon {
-    display: flex;
+.chip {
+    display: inline-flex;
     align-items: center;
-    gap: 0.8rem;
-}
-
-.skill-icon {
-    font-size: 1.5rem;
-    line-height: 1;
-    flex-shrink: 0;
-}
-
-.skill-name {
+    padding: 0.55rem 0.9rem;
+    border-radius: 999px;
+    border: 2px solid var(--navbar-border);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.06), rgba(118, 75, 162, 0.06));
     color: var(--text-color);
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
-    font-weight: 600;
-}
-
-.skill-level {
-    color: var(--primary-color);
-    font-size: clamp(0.85rem, 2vw, 1rem);
     font-weight: 700;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    user-select: none;
 }
 
-.skill-progress {
-    height: 12px;
-    background: var(--navbar-border);
-    border-radius: 50px;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
+.chip:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 18px rgba(102, 126, 234, 0.18);
 }
 
-.skill-progress-bar {
-    height: 100%;
-    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-    border-radius: 50px;
-    transition: width 1s ease-in-out;
-    position: relative;
-    overflow: hidden;
+/* === LIST BLOCKS (opsomming) === */
+.list-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
 }
 
-.skill-progress-bar::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    animation: shimmer 2s infinite;
+.list-block {
+    border: 2px solid var(--navbar-border);
+    border-radius: 16px;
+    padding: 1.25rem 1.25rem;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.04), rgba(118, 75, 162, 0.04));
 }
 
-@keyframes shimmer {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
+.list-title {
+    margin: 0 0 0.75rem 0;
+    color: var(--text-color);
+    font-weight: 800;
+    font-size: 1.1rem;
 }
 
-/* Verschillende kleuren voor elke taal */
-.python-bar {
-    background: linear-gradient(90deg, #3776ab 0%, #ffd43b 100%);
+.skill-list {
+    margin: 0;
+    padding-left: 1.25rem;
 }
 
-.javascript-bar {
-    background: linear-gradient(90deg, #f7df1e 0%, #f0db4f 100%);
+.skill-list li {
+    color: var(--light-text);
+    line-height: 1.7;
+    margin: 0.35rem 0;
 }
 
-.html-bar {
-    background: linear-gradient(90deg, #e34c26 0%, #264de4 100%);
-}
-
-.sql-bar {
-    background: linear-gradient(90deg, #00758f 0%, #f29111 100%);
-}
-
-.csharp-bar {
-    background: linear-gradient(90deg, #68217a 0%, #9b4f96 100%);
-}
-
-.angular-bar {
-    background: linear-gradient(90deg, #dd0031 0%, #c3002f 100%);
-}
-
-.typescript-bar {
-    background: linear-gradient(90deg, #007acc 0%, #3178c6 100%);
-}
-
-.bash-bar {
-    background: linear-gradient(90deg, #4eaa25 0%, #89e051 100%);
-}
-
-/* Tools Grid */
+/* === Tools Grid (mag blijven, iets opgepoetst) === */
 .tools-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.2rem;
     width: 100%;
 }
 
 .tool-card {
     background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
     border: 2px solid var(--navbar-border);
-    border-radius: 15px;
-    padding: 1.5rem;
+    border-radius: 16px;
+    padding: 1.25rem 1rem;
     text-align: center;
-    transition: all 0.3s ease;
-    cursor: pointer;
+    transition: all 0.25s ease;
+    cursor: default;
     width: 100%;
     box-sizing: border-box;
 }
 
 .tool-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     border-color: var(--primary-color);
-    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.2);
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-}
-
-.tool-icon {
-    font-size: 2.5rem;
-    margin-bottom: 0.8rem;
+    box-shadow: 0 12px 22px rgba(102, 126, 234, 0.18);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.10), rgba(118, 75, 162, 0.10));
 }
 
 .tool-card h4 {
     color: var(--text-color);
-    font-size: clamp(0.9rem, 2vw, 1rem);
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 800;
     margin: 0;
     word-wrap: break-word;
 }
 
-/* Soft Skills */
-.soft-skills-grid {
+/* === Soft Skills (van cirkels naar cards) === */
+.soft-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 2rem;
-    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
 }
 
-.soft-skill {
-    text-align: center;
+.soft-card {
+    border: 2px solid var(--navbar-border);
+    border-radius: 16px;
+    padding: 1.25rem 1.25rem;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.04), rgba(118, 75, 162, 0.04));
+    transition: all 0.25s ease;
 }
 
-.soft-skill-circle {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto 1rem;
+.soft-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-color);
+    box-shadow: 0 12px 22px rgba(102, 126, 234, 0.16);
 }
 
-.circular-chart {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    max-height: 100%;
-}
-
-.circle-bg {
-    fill: none;
-    stroke: var(--navbar-border);
-    stroke-width: 3.8;
-}
-
-.circle {
-    fill: none;
-    stroke-width: 3.8;
-    stroke-linecap: round;
-    stroke: url(#gradient);
-    animation: progress 1s ease-out forwards;
-}
-
-@keyframes progress {
-    0% { stroke-dasharray: 0, 100; }
-}
-
-.percentage {
-    fill: var(--text-color);
-    font-family: sans-serif;
-    font-size: 0.6em;
-    font-weight: 700;
-    text-anchor: middle;
-}
-
-.soft-skill p {
+.soft-card h4 {
+    margin: 0 0 0.5rem 0;
     color: var(--text-color);
-    font-size: clamp(0.9rem, 2vw, 1.05rem);
-    font-weight: 600;
+    font-size: 1.05rem;
+    font-weight: 900;
+}
+
+.soft-card p {
     margin: 0;
+    color: var(--light-text);
+    font-size: 1rem;
+    line-height: 1.7;
 }
 
-/* Add gradient definition for circular charts */
-.circular-chart::before {
-    content: '';
-    position: absolute;
-}
-
-.soft-skill:nth-child(1) .circle {
-    stroke: #667eea;
-}
-
-.soft-skill:nth-child(2) .circle {
-    stroke: #764ba2;
-}
-
-.soft-skill:nth-child(3) .circle {
-    stroke: #f093fb;
-}
-
-.soft-skill:nth-child(4) .circle {
-    stroke: #4facfe;
-}
-
+/* === RESPONSIVE === */
 @media (max-width: 968px) {
     .skills-container {
         padding: 0 1rem;
         gap: 2rem;
     }
-    
+
     .skill-category {
         padding: 2rem 1.5rem;
     }
-    
-    .skill-category-title {
-        font-size: 1.5rem;
-    }
-    
+
     .tools-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     }
-    
-    .tool-card {
-        padding: 1rem;
+
+    .soft-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-    
-    .soft-skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .soft-skill-circle {
-        width: 120px;
-        height: 120px;
+
+    .list-columns {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -389,16 +284,12 @@ p {
         gap: 0.8rem;
     }
 
-    .skill-bars {
-        gap: 1.25rem;
-    }
-
     .tools-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     }
 
-    .tool-icon {
-        font-size: 2rem;
+    .soft-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -407,24 +298,14 @@ p {
         margin-top: 8rem;
     }
 
-    .intro-section {
-        padding: 0 0.75rem;
-        margin-bottom: 2rem;
-    }
-
     .skills-container {
         padding: 0 0.5rem;
         gap: 1.5rem;
     }
 
     .skill-category {
-        padding: 1.5rem 1rem;
+        padding: 1.4rem 1rem;
         border-radius: 15px;
-    }
-
-    .skill-category-title {
-        font-size: 1.2rem;
-        gap: 0.6rem;
     }
 
     .skill-category-title svg {
@@ -432,24 +313,13 @@ p {
         height: 24px;
     }
 
-    .skill-icon {
-        font-size: 1.3rem;
-    }
-
-    .skill-name {
-        font-size: 0.95rem;
-    }
-
-    .skill-level {
-        font-size: 0.85rem;
-    }
-
-    .skill-progress {
-        height: 10px;
+    .chip {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.8rem;
     }
 
     .tools-grid {
-        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 0.75rem;
     }
 
@@ -457,24 +327,7 @@ p {
         padding: 1rem 0.75rem;
     }
 
-    .tool-icon {
-        font-size: 1.8rem;
-    }
-
     .tool-card h4 {
-        font-size: 0.85rem;
-    }
-
-    .soft-skills-grid {
-        gap: 1.5rem;
-    }
-
-    .soft-skill-circle {
-        width: 100px;
-        height: 100px;
-    }
-
-    .soft-skill p {
         font-size: 0.9rem;
     }
 }
@@ -486,45 +339,12 @@ p {
     }
 
     .skill-category {
-        padding: 1.25rem 0.75rem;
-    }
-
-    .skill-category-title {
-        font-size: 1.1rem;
-    }
-
-    .skill-name {
-        font-size: 0.85rem;
-    }
-
-    .skill-level {
-        font-size: 0.8rem;
-    }
-
-    .skill-progress {
-        height: 8px;
+        padding: 1.2rem 0.75rem;
     }
 
     .tools-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 0.6rem;
-    }
-
-    .tool-card {
-        padding: 0.8rem 0.5rem;
-    }
-
-    .tool-icon {
-        font-size: 1.6rem;
-    }
-
-    .soft-skill-circle {
-        width: 90px;
-        height: 90px;
-    }
-    
-    .section-title {
-        margin-top: 8rem;
     }
 }
 
@@ -532,11 +352,6 @@ p {
     .section-title {
         margin-top: 8rem;
         font-size: 1.8rem;
-    }
-
-    .intro-section {
-        padding: 0 0.5rem;
-        margin-bottom: 1.5rem;
     }
 
     .intro-section h2 {
@@ -564,319 +379,12 @@ p {
         border-radius: 12px;
     }
 
-    .skill-category-title {
-        font-size: 1rem;
-        gap: 0.5rem;
-    }
-
-    .skill-category-title svg {
-        width: 20px;
-        height: 20px;
-    }
-
-    .skill-bars {
-        gap: 1rem;
-    }
-
-    .skill-icon {
-        font-size: 1.2rem;
-    }
-
-    .skill-name {
-        font-size: 0.75rem;
-    }
-
-    .skill-level {
-        font-size: 0.7rem;
-    }
-
-    .skill-progress {
-        height: 6px;
-    }
-
-    .tools-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.5rem;
-    }
-
-    .tool-card {
-        padding: 0.75rem 0.4rem;
-        border-radius: 10px;
-    }
-
-    .tool-icon {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
+    .chip {
+        font-size: 0.82rem;
+        padding: 0.45rem 0.65rem;
     }
 
     .tool-card h4 {
-        font-size: 0.75rem;
-    }
-
-    .soft-skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-
-    .soft-skill-circle {
-        width: 80px;
-        height: 80px;
-    }
-
-    .soft-skill p {
-        font-size: 0.75rem;
-    }
-
-    .percentage {
-        font-size: 0.5em;
-    }
-}
-
-/* === WERKERVARING PAGE STYLES === */
-.experience-container {
-    max-width: 1200px;
-    margin: 3rem auto;
-    padding: 0 2rem;
-}
-
-.experience-timeline {
-    position: relative;
-    padding: 2rem 0;
-}
-
-.experience-timeline::before {
-    content: '';
-    position: absolute;
-    left: 30px;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: linear-gradient(180deg, var(--primary-color), rgba(102, 126, 234, 0.3));
-}
-
-.experience-item {
-    position: relative;
-    padding-left: 80px;
-    margin-bottom: 3rem;
-}
-
-.experience-item.fade-in {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-}
-
-.experience-dot {
-    position: absolute;
-    left: 19px;
-    top: 0;
-    width: 24px;
-    height: 24px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 50%;
-    border: 4px solid var(--bg);
-    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
-    transition: all 0.3s ease;
-}
-
-.experience-item:hover .experience-dot {
-    transform: scale(1.3);
-    box-shadow: 0 0 0 8px rgba(102, 126, 234, 0.3);
-}
-
-.experience-content {
-    background: var(--card-bg);
-    border-radius: 20px;
-    padding: 2rem;
-    box-shadow: 0 5px 15px var(--shadow);
-    transition: all 0.3s ease;
-}
-
-.experience-content:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px var(--shadow);
-}
-
-.experience-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.experience-title-group h3 {
-    color: var(--text-color);
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin: 0 0 0.5rem 0;
-}
-
-.experience-company {
-    color: var(--primary-color);
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 0;
-}
-
-.experience-period {
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-    color: var(--primary-color);
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    border: 2px solid var(--navbar-border);
-}
-
-.experience-description p {
-    color: var(--light-text);
-    line-height: 1.8;
-    margin-bottom: 1rem;
-    font-size: 1.05rem;
-}
-
-.experience-tasks {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0;
-}
-
-.experience-tasks li {
-    color: var(--text-color);
-    padding: 0.6rem 0;
-    padding-left: 1.8rem;
-    position: relative;
-    line-height: 1.6;
-}
-
-.experience-tasks li::before {
-    content: '▸';
-    position: absolute;
-    left: 0;
-    color: var(--primary-color);
-    font-weight: 700;
-    font-size: 1.2rem;
-}
-
-.experience-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-top: 1.5rem;
-}
-
-.tag {
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-    border: 2px solid var(--navbar-border);
-    color: var(--text-color);
-    padding: 0.4rem 1rem;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.tag:hover {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 10px rgba(102, 126, 234, 0.3);
-}
-
-/* Stats Section */
-.experience-stats {
-    margin-top: 4rem;
-    padding: 2rem;
-    background: var(--card-bg);
-    border-radius: 20px;
-    box-shadow: 0 5px 15px var(--shadow);
-}
-
-.stats-title {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--text-color);
-    margin-bottom: 2rem;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-}
-
-.stat-card {
-    text-align: center;
-    padding: 2rem;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
-    border-radius: 15px;
-    border: 2px solid var(--navbar-border);
-    transition: all 0.3s ease;
-}
-
-.stat-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--primary-color);
-    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.2);
-}
-
-.stat-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.stat-number {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.stat-label {
-    color: var(--light-text);
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-@media (max-width: 768px) {
-    .experience-container {
-        padding: 0 1rem;
-    }
-    
-    .experience-timeline::before {
-        left: 15px;
-    }
-    
-    .experience-item {
-        padding-left: 50px;
-    }
-    
-    .experience-dot {
-        left: 4px;
-        width: 20px;
-        height: 20px;
-    }
-    
-    .experience-header {
-        flex-direction: column;
-    }
-    
-    .experience-title-group h3 {
-        font-size: 1.3rem;
-    }
-    
-    .stats-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-    }
-    
-    .stat-card {
-        padding: 1.5rem 1rem;
-    }
-    
-    .stat-number {
-        font-size: 2rem;
+        font-size: 0.82rem;
     }
 }

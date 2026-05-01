@@ -56,7 +56,7 @@
     content: '';
     position: absolute;
     left: 65px;
-    top: 130px;
+    top: 40px;
     bottom: -2.5rem;
     width: 2px;
     background: linear-gradient(180deg, var(--primary-color), rgba(102, 126, 234, 0.2));
@@ -534,3 +534,64 @@
         padding: 0.3rem 0.8rem;
     }
 }
+
+/* Accordion Styling */
+.subjects-accordion {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.year-group {
+    background: rgba(255, 255, 255, 0.05); /* Lichte glans voor dark mode */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    transition: background 0.3s ease;
+}
+
+.year-group[open] {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.year-group summary {
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.year-group summary::before {
+    content: '▶';
+    font-size: 0.7rem;
+    margin-right: 10px;
+    transition: transform 0.2s ease;
+    color: #007bff; /* Of jouw accentkleur */
+}
+
+.year-group[open] summary::before {
+    transform: rotate(90deg);
+}
+
+/* Grid binnen de dropdown */
+.subjects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 12px;
+    padding-left: 5px;
+}
+
+.subject-tag {
+    background: #252538; /* Komt overeen met jouw screenshot */
+    color: #e0e0e0;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
